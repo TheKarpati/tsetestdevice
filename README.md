@@ -87,16 +87,16 @@ If you are able to see the Virtual Board, then you are sending data to the Cloud
 ### Play around with the Virtual Board
 
 Digital sensors on the GUI can be toggled on and off and should immediately show results on the RelayR Dashboard.
-![Digital Sensors](../assets/DigitalSensors.png)
+![Digital Sensors](/assets/DigitalSensors.png)
 
 Analog sensors, in our case a Luminosity sensor, can be set to user-defined values by clicking **Change Value**.
-![Analog Sensors](../assets/AnalogSensor.png)
+![Analog Sensors](/assets/AnalogSensor.png)
 
 Checking the **Enable automation** box will throw random values between 0 and 100.
-![Analog Sensors Automation](../assets/AnalogAutomation.png)
+![Analog Sensors Automation](/assets/AnalogAutomation.png)
 
 The digital actuator on our GUI is a virtual buzzer. Try activating the buzzer from the Dashboard with the **True** and **False** buttons and check out how your GUI reacts to cloud instructions !
-![Digital Actuator](../assets/DigitalActuator.png)
+![Digital Actuator](/assets/DigitalActuator.png)
 
 ### Further Steps
 
