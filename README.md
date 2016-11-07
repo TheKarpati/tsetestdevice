@@ -11,7 +11,7 @@ You just want to try the cloud but don't know where to start ?
 This is the tutorial you need !
 
 This document will allow you to ***simulate*** some hardware sensors and actuators and connect them to the [Relayr cloud and dashboard](https://dev.relayr.io/) through an intuitive GUI that looks like this :	
-![Virtual Board](../assets/VirtualBoard.png)
+![Virtual Board](/assets/VirtualBoard.png)
 
 
 ## Requirements
