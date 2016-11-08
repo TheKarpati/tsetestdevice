@@ -2,33 +2,23 @@
 
 ## Introduction
 
-Want to test different scenarios before you get hands dirty on *physical* sensors and boards ?
-
-Want to get familiar with the cloud before learning how to configure your Arduino / Rasberry Pi / Weemos or other device is ?
-
-You just want to try the cloud but don't know where to start ?
-
-This is the tutorial you need !
-
-This document will allow you to ***simulate*** some hardware sensors and actuators and connect them to the [Relayr cloud and dashboard](https://dev.relayr.io/) through an intuitive GUI that looks like this :
+This document will allow you to ***virtually simulate*** some hardware sensors and actuators and connect them to the [Relayr cloud and dashboard](https://dev.relayr.io/) through an intuitive GUI that looks like this:
 
 ![Virtual Board](/assets/VirtualBoard.png)
 
 
 ## Requirements
 
-The following hardware is required:
-
- * Nothing ! It's all virtual !
+No hardware is required.
 
 On the software side, you need to be able to run [Python 2.7.x](https://www.python.org/downloads/), and you need an account on the [RelayR website for developers](https://dev.relayr.io/).
 
 ## Installation & configuration
 
-Two things we need to get set :
+The tutorial is divided in two steps:
 
-1. On the dashboard side, we need a device that corresponds to our Virtual Board.
-2. On our computer, we want to run the Virtual Board.
+1. On the dashboard side, the creation of a device that corresponds to our Virtual Board.
+2. On our computer, setup and run the Virtual Board.
 
 
 ### Create a Device in the developer dashboard
@@ -56,14 +46,14 @@ Once installed, we can use `paho-mqtt` classes by importing the module into our 
 To learn more about the functionalities of the `paho-mqtt` Python client, see the
 [official documentation](https://pypi.python.org/pypi/paho-mqtt/1.1).
 
-We are now ready to make use of MQTT and run the Virtual Board !
+We are now ready to make use of MQTT and run the Virtual Board!
 
 ## Starting the GUI and using the Virtual Board
 
 ### Starting the GUI (`VirtualSimulator.py`)
 
 
-The only thing we need to do now is link our Virtual Board to our dashboard device. In order to do so, paste the device's credentials from the relayr Dashboard into the appropriate place of the `VirtualSimulator.py`.
+The only thing we need to do now is link our Virtual Board to our dashboard device. In order to do so, paste the device's credentials from the relayr Dashboard into the appropriate place of the file `VirtualSimulator.py`.
 
 ```python
 # MQTT credentials.
@@ -83,7 +73,7 @@ python path/to/VirtualSimulator.py
 
 Executing the `VirtualSimulator.py` code should immediately start the GUI.
 
-If you are able to see the Virtual Board, then you are sending data to the Cloud already ! Login to your dashboard and let's check out how changing your sensor states is reflected on the dashboard !
+If you are able to see the Virtual Board, then you are sending data to the Cloud already! Now you can login to your dashboard to see how changing your sensor states is reflected on the dashboard.
 
 ### Play around with the Virtual Board
 
@@ -96,13 +86,12 @@ Analog sensors, in our case a Luminosity sensor, can be set to user-defined valu
 Checking the **Enable automation** box will throw random values between 0 and 100.
 ![Analog Sensors Automation](/assets/AnalogAutomation.png)
 
-The digital actuator on our GUI is a virtual buzzer. Try activating the buzzer from the Dashboard with the **True** and **False** buttons and check out how your GUI reacts to cloud instructions !
+The digital actuator on our GUI is a virtual buzzer. Try activating the buzzer from the Dashboard with the **True** and **False** buttons and see how your GUI reacts to cloud instructions!
 ![Digital Actuator](/assets/DigitalActuator.png)
 
 ### Further Steps
 
-You want to create new devices ? Add other digital and analog sensors or actuators ?
-Go ahead, explore the commented code and make sure your new instances of sensors and actuators are also added to the Dashboard model so you can see them change states !
+If you want to create new devices, or add other digital and analog sensors or actuators, feel free to explore the commented code. Make sure your new instances of sensors and actuators are also added to the Dashboard model so you can see them change states!
 
 ## License
 
