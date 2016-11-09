@@ -60,7 +60,7 @@ First, clone the github repository to your prefered location on your computer.
 What we need to do now is link the Virtual Board to the dashboard device. This will be done thanks to your device's unique credentials. To get them, click on the little pen next to your device's name.
 ![Device Credentials](/assets/DeviceCredentials.png)
 
-Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a "virtual" board to that dashboard device.
+Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a *virtual* board to that dashboard device.
 
 Copy the device's credentials and paste them into the file `VirtualSimulator.py`, at the appropriate location shown below.
 
@@ -74,7 +74,7 @@ mqtt_credentials = {
 }
 ```
 
-Run the Virtual Board by executing the following Linux shell command where you stored the file ('path/to' has to be changed to the appropriate directory you cloned the github repository to):
+Run the Virtual Board by executing the following Linux shell command where you stored the file ('path/to' has to be replaced by the directory you cloned the github repository to):
 
 ```shell
 python path/to/VirtualSimulator.py
