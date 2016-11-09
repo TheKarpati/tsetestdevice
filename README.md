@@ -82,7 +82,7 @@ python path/to/VirtualSimulator.py
 
 Executing the `VirtualSimulator.py` code should immediately start the GUI of the Virtual Board. If you see the Virtual Board, then you are sending data to the Cloud already!
 
-Sicne the Virtual Board is running *VirtualSimulator.py* with your device credentials, you can monitor it from the dashboard and see how changing your sensor states is reflected on the dashboard !
+Since the Virtual Board is running *VirtualSimulator.py* with your device credentials, you can monitor it from the dashboard and see how changing your sensor states is reflected on the dashboard !
 
 ### Play around with the Virtual Board
 
