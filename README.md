@@ -1,8 +1,12 @@
-# Connect a virtual board with sensors and actuators to the RelayR cloud (Python Edition)
+# Connect a virtual board with sensors and actuators to the relayr cloud (Python Edition)
 
 ## Introduction
 
-This document will allow you to ***virtually simulate*** some hardware sensors and actuators and connect them to the [Relayr cloud and dashboard](https://dev.relayr.io/) through an intuitive GUI that looks like this:
+This post is addressed to users who want to send and receive data from the relayr cloud without any hardware.
+
+It is a convenient way to test the [Developer Dashboard](https://dev.relayr.io/) and software logic by separating it from any hardware-related issue. For instance you can test how to send data from a luminosity sensor and receive the instruction to trigger a buzzer, but without actually wiring any electronic board. All the sensors and actuators are virtually simulated in your laptop, but communicate ***real*** messages to the relayr cloud.
+
+This post will show you how to ***create this virtual simulation*** of hardware sensors and actuators and connect them to the [Developer Dashboard](https://dev.relayr.io/) using an intuitive GUI:
 
 ![Virtual Board](/assets/VirtualBoard.png)
 
@@ -11,7 +15,7 @@ This document will allow you to ***virtually simulate*** some hardware sensors a
 
 No hardware is required.
 
-On the software side, you need to be able to run [Python 2.7.x](https://www.python.org/downloads/), and you need an account on the [RelayR website for developers](https://dev.relayr.io/).
+On the software side, you need to be able to run [Python 2.7.x](https://www.python.org/downloads/), and you need an account on the [Developer Dashboard](https://dev.relayr.io/).
 
 ## Installation & configuration
 
@@ -23,12 +27,11 @@ The tutorial is divided in two steps:
 
 ### Create a Device in the developer dashboard
 
-So first step is to get a representation of our Virtual Board in the relayr Cloud. The simplest way is to create a device running on the **Intel Edison Model**, because we will be simulating similar sensors. Through this entity we will manage sent/received data, MQTT credentials and UI interface of the relayr Dashboard. To create a device on relayr Dashboard follow the [**Devices Guide**](http://docs.relayr.io/getting-started/devices-guide/) and select the **Intel Edison (IoT Acceleration Starter Kit)** as a *Device Model*.
+The first step is to create a representation of our Virtual Board in the relayr Cloud. The simplest way is to create a device running on the **Intel Edison Model**, because we will be simulating similar sensors. This entity will allow you to manage sent/received data and MQTT credentials through of UI interface of the relayr Developer Dashboard. To create a device on the Developer Dashboard follow the [**Devices Guide**](http://docs.relayr.io/getting-started/devices-guide/) and select the **Intel Edison (IoT Acceleration Starter Kit)** as a *Device Model*.
 
-If you prefer to create your own model to get more advanced feature, log in to the Developer Dashboard and follow the instructions of [this tutorial](http://docs.relayr.io/getting-started/device-models-guide/).
+If you prefer to create your own model in order to use more advanced features, follow the instructions of [this tutorial](http://docs.relayr.io/getting-started/device-models-guide/).
 
-But for now let's assume we are running the *Intel Edison (IoT Acceleration Starter Kit)* model.
-
+But for now, let's assume we are running the *Intel Edison (IoT Acceleration Starter Kit)* model.
 
 ###Paho MQTT
 
@@ -50,10 +53,16 @@ We are now ready to make use of MQTT and run the Virtual Board!
 
 ## Starting the GUI and using the Virtual Board
 
+First, clone the github repository to your prefered location on your computer.
+
 ### Starting the GUI (`VirtualSimulator.py`)
 
+What we need to do now is link the Virtual Board to the dashboard device. This will be done thanks to your device's unique credentials. To get them, click on the little pen next to your device's name.
+![Device Credentials](/assets/DeviceCredentials.png)
 
-The only thing we need to do now is link our Virtual Board to our dashboard device. In order to do so, paste the device's credentials from the relayr Dashboard into the appropriate place of the file `VirtualSimulator.py`.
+Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a "virtual" board to that dashboard device.
+
+Copy the device's credentials and paste them into the file `VirtualSimulator.py`, at the appropriate location shown below.
 
 ```python
 # MQTT credentials.
@@ -65,22 +74,22 @@ mqtt_credentials = {
 }
 ```
 
-Run the Virtual Board by executing the following Linux shell command to the directory where you stored the file:
+Run the Virtual Board by executing the following Linux shell command where you stored the file ('path/to' has to be changed to the appropriate directory you cloned the github repository to):
 
 ```shell
 python path/to/VirtualSimulator.py
 ```
 
-Executing the `VirtualSimulator.py` code should immediately start the GUI.
+Executing the `VirtualSimulator.py` code should immediately start the GUI of the Virtual Board. If you see the Virtual Board, then you are sending data to the Cloud already!
 
-If you are able to see the Virtual Board, then you are sending data to the Cloud already! Now you can login to your dashboard to see how changing your sensor states is reflected on the dashboard.
+Sicne the Virtual Board is running *VirtualSimulator.py* with your device credentials, you can monitor it from the dashboard and see how changing your sensor states is reflected on the dashboard !
 
 ### Play around with the Virtual Board
 
-Digital sensors on the GUI can be toggled on and off and should immediately show results on the RelayR Dashboard.
+Digital sensors on the GUI can be toggled on and off and should immediately show results on the Developer Dashboard.
 ![Digital Sensors](/assets/DigitalSensors.png)
 
-Analog sensors, in our case a Luminosity sensor, can be set to user-defined values by clicking **Change Value**.
+Analog sensors - in our case, a luminosity sensor - can be set to user-defined values by clicking **Change Value**.
 ![Analog Sensors](/assets/AnalogSensor.png)
 
 Checking the **Enable automation** box will throw random values between 0 and 100.
