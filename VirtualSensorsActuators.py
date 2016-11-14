@@ -36,18 +36,17 @@ class AnalogSensor:
     def __init__(self, name):
         self.value = 1
         self.name = name
+        self.automationFlag = False # is used to automation sensor values
 
     def __str__(self):
         return self.name
 
 
 # Here are the functions that allow us to modify states of sensors !
-def turnDigitalOnOff(digitalSensor):
-    """ This function toggles a digital sensor on or off """
-    if digitalSensor.value == "false":
-        digitalSensor.start()
-    else:
-        digitalSensor.stop()
-
-def changeAnalogValue(analogSensor, value): # might be useless on the long term. Unless changes need to be tracked
+def changeAnalogValue(analogSensor, value):
+    """ Although it seems redundant, this function is NECESSARY as we use it in lambda expressions in the GUI
+    """
     analogSensor.value = value
+
+def toggleAutomation(analogSensor):
+    analogSensor.automationFlag = not analogSensor.automationFlag
