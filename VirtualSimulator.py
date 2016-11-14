@@ -124,8 +124,9 @@ def main():
     Then it sets the connection to the cloud via MQTT
     Finally it triggers the GUI of the Virtual Board
     """
-
     initialGUI = Tk()
+    initialGUI.wm_title("Hello! Please enter your credentials!")
+    initialGUI['bg']='lightgrey'
     app = CredentialsWindow(initialGUI) # creates an instance of CredentialsGUI as initialGUI
     initialGUI.mainloop()
 
