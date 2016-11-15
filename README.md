@@ -15,7 +15,7 @@ This post will show you how to ***create this virtual simulation*** of hardware 
 
 No hardware is required.
 
-On the software side, you need to be able to run [Python 2.7.x](https://www.python.org/downloads/), and you need an account on the [Developer Dashboard](https://dev.relayr.io/).
+On the software side, you need to be able to run Python 2.7.x, and you need an account on the [Developer Dashboard](https://dev.relayr.io/). If you have a Mac or Linux machine, you ought to have Python built-in. If you run on Windows, just download the latest [Python 2.7.x](https://www.python.org/downloads/).
 
 ## Installation & configuration
 
@@ -25,28 +25,29 @@ The tutorial is divided in two steps:
 2. On our computer, setup and run the Virtual Board.
 
 
-### Create a Device in the developer dashboard
+### Create a Device in the [developer dashboard](https://dev.relayr.io/)
 
-The first step is to create a representation of our Virtual Board in the relayr Cloud. The simplest way is to create a device running on the **Intel Edison Model**, because we will be simulating similar sensors. This entity will allow you to manage sent/received data and MQTT credentials through of UI interface of the relayr Developer Dashboard. To create a device on the Developer Dashboard follow the [**Devices Guide**](http://docs.relayr.io/getting-started/devices-guide/) and select the **Intel Edison (IoT Acceleration Starter Kit)** as a *Device Model*.
+The first step is to create a representation of our Virtual Board in the relayr Cloud. The simplest way is to create a device running on the **Intel Edison Model**, because we will be simulating similar sensors. This entity will allow you to manage sent/received data and MQTT credentials through the relayr Developer Dashboard. To create a device on the Developer Dashboard follow the [**Devices Guide**](http://docs.relayr.io/getting-started/devices-guide/), filter your search "By the community" and select the **Intel Edison (IoT Acceleration Starter Kit)** as a *Device Model*.
 
 If you prefer to create your own model in order to use more advanced features, follow the instructions of [this tutorial](http://docs.relayr.io/getting-started/device-models-guide/).
 
 But for now, let's assume we are running the *Intel Edison (IoT Acceleration Starter Kit)* model.
 
-###Paho MQTT
+### Get Paho-MQTT on your computer
 
-In order to run the Python examples provided in this repository, we need to install the [`paho-mqtt`](https://pypi.python.org/pypi/paho-mqtt/1.1) package,
-which provides a MQTT client library and enables sending/receiving of messages to/from a MQTT broker. [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight messaging protocol built on top of TCP/IP. We chose it for exchanging messages between the cloud and the Virtual Board because of its simplicity and low overhead.
+In order to run the Python code provided in the github repository, we need first to install the [`paho-mqtt`](https://pypi.python.org/pypi/paho-mqtt/1.1) package, which provides a MQTT client library and enables sending/receiving of messages to/from a MQTT broker. [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight messaging protocol built on top of TCP/IP. We chose it for exchanging messages between the cloud and the Virtual Board because of its simplicity and low overhead.
 
-To install `paho-mqtt`  with `pip`, run:
+It is often good practice to run packages on virtual environments (like a sandbox within your computer). So let's follow the following command lines to install `paho-mqtt`.
 
 ```shell
+virtualenv ENV
+source ENV/bin/activate
 pip install paho-mqtt
 ```
 
-Once installed, we can use `paho-mqtt` classes by importing the module into our script, as we will see later in our code examples.
+If you are a Windows user, you can download the library [here](https://pypi.python.org/pypi/paho-mqtt/1.2) and place it in your python repository.
 
-To learn more about the functionalities of the `paho-mqtt` Python client, see the
+Once installed, we can use `paho-mqtt` classes by importing the module into our script. To learn more about the functionalities of the `paho-mqtt` Python client, see the
 [official documentation](https://pypi.python.org/pypi/paho-mqtt/1.1).
 
 We are now ready to make use of MQTT and run the Virtual Board!
@@ -57,7 +58,7 @@ First, clone the github repository to your prefered location on your computer.
 
 ### Starting the GUI (`VirtualSimulator.py`)
 
-Run the Virtual Board by executing the following Linux shell command where you stored the file ('path/to' has to be replaced by the directory you cloned the github repository to):
+Run the Virtual Board by executing the following Linux shell command where you stored the file: 'path/to' has to be replaced by the directory you cloned the github repository to. *Note: Be sure to run it within your virtual environment ENV, to make sure you benefit from the paho-mqtt library.*
 
 ```shell
 python path/to/VirtualSimulator.py
@@ -69,7 +70,7 @@ Executing `VirtualSimulator.py` should immediately start the following credentia
 What we need to do now is link the Virtual Board to the dashboard device. This will be done thanks to your device's unique credentials. To get them, click on the little pen next to your device's name.
 ![Device Credentials](/assets/DeviceCredentials.png)
 
-Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a *virtual* board to that dashboard device.
+*Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a *virtual* board to that dashboard device.*
 
 Copy the device's credentials and paste them into the GUI. Make sure to paste the brackets too.
 
