@@ -1,6 +1,6 @@
 # Connect a virtual board with sensors and actuators to the relayr cloud (Python Edition)
 
-*OMG AWESOME*
+* OMG 234 AWESOME*
 
 ## Introduction
 
