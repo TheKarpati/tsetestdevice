@@ -15,7 +15,7 @@ This post will show you how to ***create this virtual simulation*** of hardware 
 
 No hardware is required.
 
-On the software side, you need to be able to run Python 2.7.x, and you need an account on the [Developer Dashboard](https://dev.relayr.io/). If you have a Mac or Linux machine, you ought to have Python built-in. If you run on Windows, just download the latest [Python 2.7.x](https://www.python.org/downloads/).
+On the software side, you need to be able to run Python 3.x, and you need an account on the [Developer Dashboard](https://dev.relayr.io/). If you have a Mac or Linux machine, you ought to have Python 2.x built-in. You thus have the choice between downloading Python 3.x or following [this tutorial for Python 2.7.x](https://github.com/relayr/python-virtual-device/tree/Python2.7). If you run on Windows, just download the latest [Python 3.x](https://www.python.org/downloads/).
 
 ## Installation & configuration
 
