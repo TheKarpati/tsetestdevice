@@ -42,7 +42,7 @@ It is often good practice to run packages on virtual environments (like a sandbo
 ```shell
 virtualenv ENV
 source ENV/bin/activate
-pip install paho-mqtt
+pip3 install paho-mqtt
 ```
 
 If you are a Windows user, you can download the library [here](https://pypi.python.org/pypi/paho-mqtt/1.2) and place it in your python repository.
