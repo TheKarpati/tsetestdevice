@@ -138,7 +138,7 @@ def main():
         :param rc: the connection result
         :return: None
         """
-        print("Connected to the MQTT broker: %s" % rc)
+        myLogger.info("Connected to the MQTT broker: %s" % rc)
         # Subscribe to 'cmd' (command) and 'config' (configuration) MQTT topics.
         client.subscribe(Credentials.mqtt_credentials['topic']+'cmd')
         client.subscribe(Credentials.mqtt_credentials['topic']+'config')
