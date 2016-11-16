@@ -1,5 +1,3 @@
-import cmd, sys, random
-
 # All hardware GPIOs are replaced by software classes that can be automated or user commanded
 class DigitalSensor:
     def __init__(self, name):
