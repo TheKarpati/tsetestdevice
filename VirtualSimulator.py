@@ -152,8 +152,9 @@ def main():
         payload, qos, retain.
         :return: None
         """
-        # Decode the received JSON message.
-        message = json.loads(msg.payload)
+        # Decode the received JSON message. IN PYTHON 3 !!
+        str_msg = msg.payload.decode('utf-8')
+        message = json.loads(str_msg)
         # Handle the received messages with 'name':'buzzer'.
         if message['name'] == 'buzzer':
             if message['value']: # buzzer has to be triggered
