@@ -8,7 +8,7 @@ and connected to the cloud through MQTT. It has three parts :
 import cmd, sys
 import logging
 import VirtualSensorsActuators
-from tkinter import *
+from Tkinter import *
 import json
 import paho.mqtt.client as paho
 import random
