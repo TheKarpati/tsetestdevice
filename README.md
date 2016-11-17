@@ -41,7 +41,7 @@ But for now, let's assume we are running the *Intel Edison (IoT Acceleration Sta
 
 In order to run the Python code provided in the github repository, we need first to install the [`paho-mqtt`](https://pypi.python.org/pypi/paho-mqtt/1.1) package, which provides a MQTT client library and enables sending/receiving of messages to/from a MQTT broker. [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight messaging protocol built on top of TCP/IP. We chose it for exchanging messages between the cloud and the Virtual Board because of its simplicity and low overhead.
 
-It is often good practice to run packages on virtual environments (like a sandbox within your computer). So let's follow the following command lines to install `paho-mqtt`.
+It is often good practice to run packages on virtual environments (like a sandbox within your computer). So let's write the following command lines to install `paho-mqtt`.
 
 ```shell
 virtualenv ENV
