@@ -72,7 +72,7 @@ Executing `VirtualSimulator.py` should immediately start the following credentia
 What we need to do now is link the Virtual Board to the dashboard device. This will be done thanks to your device's unique credentials. To get them, click on the little pen next to your device's name.
 ![Device Credentials](/assets/DeviceCredentials.png)
 
-*Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a **virtual** board to that dashboard device.*
+*Note: whenever you create a device on the Developper Dashboard, relayr gives it unique credentials that you will need to later link any physical board to this dashboard device. In our tutorial, we link a* **virtual** *board to that dashboard device.*
 
 Copy the device's credentials and paste them into the GUI. Make sure to paste the brackets too.
 
