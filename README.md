@@ -1,4 +1,6 @@
-# Connect a virtual board with sensors and actuators to the relayr cloud (Python Edition)
+# Connect a virtual board with sensors and actuators to the relayr cloud (Python 3.5 Edition)
+
+**If you use Python 2.7.x, go [here](https://github.com/relayr/python-virtual-device/tree/Python2.7)**
 
 ## Introduction
 
