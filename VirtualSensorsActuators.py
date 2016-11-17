@@ -49,7 +49,7 @@ class AnalogSensor:
         return self.name
 
 
-# Here are the functions that allow us to modify states of sensors !
+# Here are the functions that allow us to modify states of sensors
 def changeAnalogValue(analogSensor, value):
     """ It seems redundant but this function is NECESSARY for
     future lambda expressions in the GUI"""
