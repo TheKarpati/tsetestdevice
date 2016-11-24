@@ -6,7 +6,7 @@ At the end of the module are the basic functions to change those values.
 """
 
 class DigitalSensor:
-	""" A DigitalSensor can only be on or off. Ex: motion sensor"""
+    """ A DigitalSensor can only be on or off. Ex: motion sensor"""
     def __init__(self, name):
         self.name = name
         self.value = "false"
@@ -22,7 +22,7 @@ class DigitalSensor:
 
 
 class DigitalActuator:
-	""" A DigitalActuator can only be on or off. Ex: buzzer"""
+    """ A DigitalActuator can only be on or off. Ex: buzzer"""
     def __init__(self, name):
         self.value = "false"
         self.name = name
@@ -39,7 +39,7 @@ class DigitalActuator:
 
 
 class AnalogSensor:
-	""" An AnalogSensor can have any numeric value. Ex: a luminosity sensor"""
+    """ An AnalogSensor can have any numeric value. Ex: a luminosity sensor"""
     def __init__(self, name):
         self.value = 1
         self.name = name
@@ -56,4 +56,4 @@ def changeAnalogValue(analogSensor, value):
     analogSensor.value = value
 
 def toggleAutomation(analogSensor):
-analogSensor.automationFlag = not analogSensor.automationFlag
+    analogSensor.automationFlag = not analogSensor.automationFlag
