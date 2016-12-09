@@ -24,6 +24,8 @@ myLogger.setLevel(10)
 waterSensor = VirtualSensorsActuators.DigitalSensor('water1')
 motionSensor = VirtualSensorsActuators.DigitalSensor('motion1')
 luminositySensor = VirtualSensorsActuators.AnalogSensor('lum1')
+# TUTORIAL: ADD RSSI SENSOR HERE
+#
 thermometerSensor = VirtualSensorsActuators.AnalogSensor('therm1')
 buzzer = VirtualSensorsActuators.DigitalActuator('buzz1')
 
@@ -87,6 +89,8 @@ class VirtualBoard:
         self.waterSensorFrame = self.newDigitalSensorFrame(self.digitalSensorFrame, "Water sensor", waterSensor)
         self.luminositySensorFrame = self.newAnalogSensorFrame(self.analogSensorFrame, "Luminosity sensor", luminositySensor)
         self.temperatureSensorFrame = self.newAnalogSensorFrame(self.analogSensorFrame, "Temperature", thermometerSensor)
+        # TUTORIAL: ADD RSSI SENSOR FRAME HERE
+        #
         # buzzerFrame doesn't need a function, it's only 3 lines...
         self.buzzerFrame = Frame(self.digitalActuatorFrame, borderwidth=2, relief=GROOVE)
         self.buzzerFrame.pack(side=RIGHT, padx=5, pady=5)
@@ -198,10 +202,15 @@ def main():
         if thermometerSensor.automationFlag:
             thermometerSensor.value = random.randint(0,100)
 
+        # TUTORIAL: ADD RSSI AUTOMATIONFLAG HERE
+        #
+
         # Form a python dictionary payload
         data = [{'meaning': 'motion', 'value': motionSensor.value},
                 {'meaning': 'luminosity', 'value': luminositySensor.value},
                 {'meaning': 'water', 'value': waterSensor.value},
+                # TUTORIAL: ADD RSSI MEANING HERE
+                #
                 {'meaning': 'temperature', 'value': thermometerSensor.value}]
         # Publish the payload as a json message to the 'data' MQTT topic.
         client.publish(Credentials.mqtt_credentials['topic'] + '/data',
