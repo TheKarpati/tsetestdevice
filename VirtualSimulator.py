@@ -160,7 +160,7 @@ def main():
         str_msg = msg.payload.decode('utf-8')
         message = json.loads(str_msg)
         # Handle the received messages with 'name':'buzzer'.
-        if message['name'] == 'buzzer':
+        if message['name']:
             if message['value'] == 'True': # buzzer has to be triggered
                 buzzer.start()
                 virtualBoard.buzzerFrame.config(bg="red")
@@ -213,7 +213,7 @@ def main():
                 #
                 {'meaning': 'temperature', 'value': thermometerSensor.value}]
         # Publish the payload as a json message to the 'data' MQTT topic.
-        client.publish(Credentials.mqtt_credentials['topic'] + '/data',
+        client.publish(Credentials.mqtt_credentials['topic'] + 'data',
                            payload=json.dumps(data), qos=0, retain=False)
         # Reschedule event
         mainGUI.after(pub_freq_ms, task)
