@@ -9,22 +9,22 @@ class DigitalSensor:
     """ A DigitalSensor can only be on or off. Ex: motion sensor"""
     def __init__(self, name):
         self.name = name
-        self.value = "false"
+        self.value = False
 
     def __str__(self):
         return self.name
 
     def start(self):
-        self.value = "true"
+        self.value = True
 
     def stop(self):
-        self.value = "false"
+        self.value = False
 
 
 class DigitalActuator:
     """ A DigitalActuator can only be on or off. Ex: buzzer"""
     def __init__(self, name):
-        self.value = "false"
+        self.value = False
         self.name = name
 
     def __str__(self):
@@ -32,10 +32,10 @@ class DigitalActuator:
 
     # Actuator shouldn't be controlled from device, but from the cloud !
     def start(self):
-        self.value = "true"
+        self.value = True
 
     def stop(self):
-        self.value = "false"
+        self.value = False
 
 
 class AnalogSensor:
