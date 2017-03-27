@@ -160,8 +160,8 @@ def main():
         str_msg = msg.payload.decode('utf-8')
         message = json.loads(str_msg)
         # Handle the received messages with 'name':'buzzer'.
-        if message['name']:
-            if message['value'] == 'True': # buzzer has to be triggered
+        if message['name'] == 'buzzer':
+            if message['value']: # buzzer has to be triggered
                 buzzer.start()
                 virtualBoard.buzzerFrame.config(bg="red")
                 myLogger.info(buzzer.name + " is activated !")
