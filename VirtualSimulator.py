@@ -115,6 +115,9 @@ class VirtualBoard:
         analogValue.pack(side=BOTTOM)
         button = Button(frame, text ='Change value', command = lambda: VirtualSensorsActuators.changeAnalogValue(analogSensor, analogValue.get()) )
         button.pack(side=BOTTOM)
+        # Randomizer button
+        button = Checkbutton(frame, text='Enable randomizer', command = lambda: VirtualSensorsActuators.toggleRandomizer(analogSensor))
+        button.pack(side=BOTTOM)
         # Automation button
         button = Checkbutton(frame, text='Enable automation', command = lambda: VirtualSensorsActuators.toggleAutomation(analogSensor))
         button.pack(side=BOTTOM)
@@ -195,12 +198,19 @@ def main():
         """
         myLogger.debug("Parallel task publishing data")
 
-        # Allows user to automate change of analogSensor.value. Set to random by default.
-        if luminositySensor.automationFlag:
+        # Allows user to automate randomization of analogSensor.value
+        if luminositySensor.randomizerFlag:
             luminositySensor.value = random.randint(0,100)
 
-        if thermometerSensor.automationFlag:
+        if thermometerSensor.randomizerFlag:
             thermometerSensor.value = random.randint(0,100)
+
+        # Allows user to automate any function of analogSensor.value. Here we simply increment.
+        if luminositySensor.automationFlag:
+            luminositySensor.value += 1
+
+        if thermometerSensor.automationFlag:
+            thermometerSensor.value += 1
 
         # TUTORIAL: ADD RSSI AUTOMATIONFLAG HERE
         #

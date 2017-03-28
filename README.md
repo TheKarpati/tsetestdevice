@@ -96,11 +96,13 @@ Since the Virtual Board is running *VirtualSimulator.py* with your device creden
 Digital sensors on the GUI can be toggled on and off and should immediately show results on the Developer Dashboard.
 ![Digital Sensors](/assets/DigitalSensors.png)
 
-Analog sensors - in our case, a luminosity sensor and a thermometer - can be set to user-defined values by clicking **Change Value**.
+Analog sensors - in our case, a luminosity sensor and a thermometer - can be set to user-defined values by clicking **Change value**.
 ![Analog Sensors](/assets/AnalogSensor.png)
 
-Checking the **Enable automation** box will throw random values between 0 and 100.
+Checking the **Enable randomizer** box will throw random values between 0 and 100.
 ![Analog Sensors Automation](/assets/AnalogAutomation.png)
+
+In the same way, checking the **Enable automation** box will increment automatically analog value by 1.
 
 The digital actuator on our GUI is a virtual buzzer. Try activating the buzzer from the Dashboard with the **True** and **False** buttons and see how your GUI reacts to cloud instructions!
 ![Digital Actuator](/assets/DigitalActuator.png)

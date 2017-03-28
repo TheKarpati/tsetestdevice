@@ -43,7 +43,8 @@ class AnalogSensor:
     def __init__(self, name):
         self.value = 1
         self.name = name
-        self.automationFlag = False # is used to automate sensor values
+        self.randomizerFlag = False # is used to automate random sensor values
+        self.automationFlag = False # is used to automate incrementing sensor values
 
     def __str__(self):
         return self.name
@@ -54,6 +55,9 @@ def changeAnalogValue(analogSensor, value):
     """ It seems redundant but this function is NECESSARY for
     future lambda expressions in the GUI"""
     analogSensor.value = value
+
+def toggleRandomizer(analogSensor):
+    analogSensor.randomizerFlag = not analogSensor.randomizerFlag
 
 def toggleAutomation(analogSensor):
     analogSensor.automationFlag = not analogSensor.automationFlag
