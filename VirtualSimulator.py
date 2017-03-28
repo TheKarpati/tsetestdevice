@@ -207,10 +207,10 @@ def main():
 
         # Allows user to automate any function of analogSensor.value. Here we simply increment.
         if luminositySensor.automationFlag:
-            luminositySensor.value += 1
+            luminositySensor.value = int(luminositySensor.value)+1 # conversion to int is needed in case .value is a string (when generated from GUI)
 
         if thermometerSensor.automationFlag:
-            thermometerSensor.value += 1
+            thermometerSensor.value = int(luminositySensor.value)+1 # conversion to int is needed in case .value is a string (when generated from GUI)
 
         # TUTORIAL: ADD RSSI AUTOMATIONFLAG HERE
         #
